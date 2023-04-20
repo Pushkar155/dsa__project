@@ -61,7 +61,6 @@ router.post('/signin',async(req,res)=>{
         console.log(error);
     }
 })
-
 router.post("/login",async(req,res)=>{
     const {email,password}=req.body;
     if(!email || !password){
