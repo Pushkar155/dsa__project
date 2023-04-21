@@ -70,12 +70,16 @@ router.post("/login",async(req,res)=>{
         const userlogin = await User__login.findOne({email:email});
         // console.log(userlogin);
             if(userlogin){
+                // console.log(userlogin);
                 if(password==userlogin.password){
                     return res.status(201).json({message:"User Login Succefully"});
                 }
                 else if(password!=userlogin.password){
                     return res.status(422).json({error:"Password Is Wrong"});
                 }
+            }
+            else{
+                return res.status(422).json({message:`User Not Exist ${email}`});
             }
     } catch (error) {
         console.log(error);
