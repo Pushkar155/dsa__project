@@ -1,0 +1,6 @@
+{
+    "version": 2,
+    "name": "dsa-back",
+    "builds": [{ "src": "app.js", "use": "@vercel/node" }],
+    "routes": [{ "src": "/(.*)", "dest": "/server.js" }]
+  }
